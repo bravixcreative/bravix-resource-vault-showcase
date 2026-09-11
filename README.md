@@ -1,26 +1,34 @@
+<p align="center">
+  <img
+    src="./screenshots/resource-vault-home.png"
+    alt="Bravix Resource Vault"
+    width="100%"
+  />
+</p>
 # Bravix Resource Vault
 
-A modern resource discovery and management platform built by **Bravix Creative**.
+A secure resource portal for organizations, communities and membership-based platforms — built by **Bravix Creative**.
 
-Bravix Resource Vault was designed to provide a clean, scalable experience for discovering, organizing and managing curated digital resources through a modern frontend and structured admin workflow.
+Bravix Resource Vault provides private file distribution, member access groups, controlled downloads, announcements and a dedicated administration console through one scalable web application.
 
-> This repository is a public showcase of the project architecture, features and selected implementation patterns. The production source code remains private.
+> This repository is a public showcase of the product architecture, features and selected implementation patterns. The production source code remains private.
 
 ---
 
 ## Highlights
 
-- Modern resource discovery experience
-- Search and filtering
-- Structured categories
-- Resource detail views
-- Authentication
-- Admin dashboard
-- Resource management
-- Secure CRUD workflows
-- Responsive interface
-- SEO-ready architecture
-- Scalable database structure
+- Private member resource library
+- Secure file distribution
+- Group-based access control
+- Member management
+- Download limits and tracking
+- Resource publishing
+- Announcements
+- Administration console
+- Download activity monitoring
+- Storage usage overview
+- Multi-language foundation
+- Responsive member experience
 
 ---
 
@@ -89,11 +97,11 @@ This showcase includes simplified examples demonstrating parts of the architectu
 ### Supabase Data Access
 
 ```ts
-const {data, error} = await supabase
-  .from('resources')
-  .select('id, title, slug, category')
-  .eq('published', true)
-  .order('created_at', {ascending: false});
+const { data, error } = await supabase
+  .from("resources")
+  .select("id, title, slug, category")
+  .eq("published", true)
+  .order("created_at", { ascending: false });
 ```
 
 ### Metadata
@@ -104,17 +112,63 @@ export function createResourceMetadata(resource: Resource) {
     title: resource.title,
     description: resource.description,
     alternates: {
-      canonical: `/resources/${resource.slug}`
-    }
+      canonical: `/resources/${resource.slug}`,
+    },
   };
 }
 ```
 
 ---
 
-## Screenshots
+## Product Preview
 
-Product screenshots and UI previews can be found in the [`screenshots`](./screenshots) directory.
+### Member Experience
+
+A private resource portal designed around simple discovery, controlled access and secure downloads.
+
+<p align="center">
+  <img
+    src="./screenshots/resource-vault-home.png"
+    alt="Bravix Resource Vault — Member resource portal"
+    width="100%"
+  />
+</p>
+
+### Built Around the Member
+
+Resources are organized around access groups, controlled downloads and direct communication — keeping the member experience simple while maintaining control behind the scenes.
+
+<p align="center">
+  <img
+    src="./screenshots/platform-features.png"
+    alt="Bravix Resource Vault — Platform features"
+    width="100%"
+  />
+</p>
+
+### Admin Console
+
+The administration layer provides a central overview of members, resources, downloads, storage and access groups.
+
+<p align="center">
+  <img
+    src="./screenshots/admin-overview.png"
+    alt="Bravix Resource Vault — Admin console overview"
+    width="100%"
+  />
+</p>
+
+### Resource & Access Management
+
+Administrators can publish private files and control exactly which member groups can access each resource.
+
+<p align="center">
+  <img
+    src="./screenshots/admin-resources.png"
+    alt="Bravix Resource Vault — Resource and access management"
+    width="100%"
+  />
+</p>
 
 ---
 
